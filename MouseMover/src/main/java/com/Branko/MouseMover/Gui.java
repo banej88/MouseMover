@@ -9,6 +9,7 @@ public class Gui implements Runnable{
 					private JButton start;
 					private JCheckBox cb;
 					private JTextField seconds;
+					private JLabel tekst;
 					
 					public void run() {
 							
@@ -44,13 +45,14 @@ public class Gui implements Runnable{
 						start = new JButton("Start/Stop");
 						start.setBackground(Color.GRAY);
 						cb = new JCheckBox("Click included");
+						tekst = new JLabel("Seconds Interval");
 						seconds = new JTextField("10");
-						container.add(new JLabel("Seconds Interval"));
+						container.add(tekst);
 						container.add(cb);
 						container.add(seconds);
 						container.add(start);
 						
-						Listeners l = new Listeners(start,cb,seconds);
+						Listeners l = new Listeners(start,cb,seconds,tekst);
 						start.addActionListener(l);
 						
 						
